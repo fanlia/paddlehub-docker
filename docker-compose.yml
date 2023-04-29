@@ -1,0 +1,9 @@
+
+version: "3.9"
+services:
+  web:
+    image: "fanlia/paddlehub-docker"
+    build: .
+    command: hub serving start -m chinese_ocr_db_crnn_server
+    ports:
+      - "8866:8866"
