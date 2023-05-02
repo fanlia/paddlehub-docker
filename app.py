@@ -17,7 +17,7 @@ def ocr_route():
         buf = request.files['file'].read()
         image = np.frombuffer(buf, np.uint8)
         img = cv2.imdecode(image, 1)
-        ocr = hub.Module(name="chinese_ocr_db_crnn_mobile", enable_mkldnn=True)
+        ocr = hub.Module(name="ch_pp-ocrv3", enable_mkldnn=True)
         results = ocr.recognize_text(images=[img])
         result = results[0]['data']
 
